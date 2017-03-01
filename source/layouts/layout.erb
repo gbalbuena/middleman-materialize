@@ -7,13 +7,21 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+    <title><%= current_page.data.title || "7 Teros" %></title>
 
     <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
   </head>
 
   <body class="<%= page_classes %>">
-    <%= yield %>
+    <div class="container">
+      <header>
+        <h1>Welcome</h1>
+      </header>
+      <%= yield %>
+      <footer>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit &copy; <%= Date.today.year %>
+      </footer>
+    </div>
+    <%= javascript_include_tag "site" %>
   </body>
 </html>

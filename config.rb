@@ -23,6 +23,14 @@ configure :development do
   activate :livereload
 end
 
+activate :sprockets
+
+if defined? RailsAssets
+  RailsAssets.load_paths.each do |path|
+    sprockets.append_path path
+  end
+end
+
 ###
 # Helpers
 ###
